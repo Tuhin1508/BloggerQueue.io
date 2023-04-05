@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ChemBlog2._0</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ChemBlog2._0.styles.css" asp-append-version="true" />
+    <style>
+        .navbar {
+            /*border-bottom: px solid rgba(255, 255, 255, 0.12);*/
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+            /*padding: 20px;*/
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .nav-link {
+            font-size: 16px;
+        }
+
+            .nav-link:hover {
+                color: rgba(255, 255, 255, 0.8);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="shadow-sm p-0 mb-5" style="background-color:rgb(75, 0, 130);">
+                <nav class="navbar navbar-expand-md navbar-dark box-shadow text-center" style="background-color:rgb(75, 0, 130);">
+                    <a class="navbar-brand" href="#" style="margin-left:10px;">Bolgger Queue</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="editor">Home</a>
+                                </li>
+                                <li class="nav-item" style="margin-left=200px;">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Account" asp-action="Registration">Register</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <partial name="View" />
+                            </ul>
+                        </div>
+                </nav>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-5">
+                            <h4 class="text-white" style="margin-top:50px;"><b>Welcome to our blog application </b></h4>
+                            <h6 class="text-white" style="margin-top:0px;">If you're looking for a platform that offers engaging, informative, and thought-provoking content, you've come to the right place. Our blog application is designed to cater to a diverse range of interests, from lifestyle and fashion to tech and science.</h6>
+                            <div class="col-1">
+                                <button href="#" class="btn btn-outline-light" role="button" aria-pressed="true" style="width:200px;">Get Started</button>
+                            </div>
+                        </div>
+                        <div class="col-5" style="margin-top:10px;">
+                            <img src="~/blog-removebg-preview.png" alt="My Image" style="width:200px;margin-left:20px;" />
+                        </div>
+                        <div class="row">
+                        </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - ChemBlog2._0 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿@model ChemBlog2._0.Models.AdminPanelEntity;
+<link href="~/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="~/js/froala_editor.pkgd.min.js"></script>
+@if (@ViewBag.Error ==true)
+{
+    <div class="alert alert-danger" role="alert">
+        This is a danger alert—check it out!
+    </div>
+}
+<div class="card">
+    <div class="card-body">
+        <div class="container">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h7 class="text-center"><code class="text-black">Admin DashBoard</code></h7>
+                        <p>
+                                <h10><li><code>As an admin of a blog application, you have access to powerful tools that allow you to manage and customize your site in a variety of ways. From adding new content and moderating comments to analyzing user data and monitoring performance, the admin dashboard is your central hub for all things blog-related.</code></li>
+                                <h10><li><code>One of the key features of the admin dashboard is the ability to create and publish new blog posts. With a user-friendly editor, you can easily write and format your content, add images and videos, and even schedule posts to publish at a later date. This makes it easy to stay on top of your content strategy and ensure a steady stream of fresh, engaging content for your readers.</code></li></h10>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+                            <form method="post" asp-action="AdminPanel">
+                        <div class="text-center"><h6>Editor DashBoard</h6></div>
+                            <br/>
+                            <input class="form-control" hidden asp-for="UserRegId" value=@ViewBag.Id disabled>
+                            <div class="form-group">
+                                <label asp-for="Heading"></label>
+                                <div class="col-sm-15">
+                                        <input class="form-control" asp-for="Heading" placeholder="Heading"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <label asp-for="ShortDescription"></label>
+                                <div class="col-sm-15">
+                                    <input class="form-control" asp-for="ShortDescription" placeholder="Short Description">
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <label asp-for="ImagePath"></label>
+                                <div class="col-sm-15">
+                                     <input class="form-control" asp-for="ImagePath" placeholder="ImagePath">
+                                </div>
+                            </div>
+  
+                        <br/>
+                        <div>
+                            <textarea name="content" id="myEditor">@Html.Raw(@ViewBag.title)</textarea>
+                            <script>
+                                var editor = new FroalaEditor('#myEditor')
+                            </script>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            <div class="text-center" col-sm-15>
+                                <input type="submit" name="_Submit" class="btn btn-dark w-40" value="Submit"/>
+                                <input type="submit" name ="Preview" class="btn btn-warning w-40" value="Preview" />
+                            </div>
+                        </div>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+                            <form method="post" asp-action="SubmitData">
+                                    <div class="text-center"><h6>Preview The Article</h6></div>
+                                    <div><h7>@Html.Raw(@ViewBag.title)</h7></div>
+                                    <a type="button" class="btn btn-dark w-100" asp-controller="Home" asp-action="Index">Back</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

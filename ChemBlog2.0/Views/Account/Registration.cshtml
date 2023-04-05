@@ -1,0 +1,66 @@
+﻿@model ChemBlog2._0.Models.RegistrationViewModel
+@{
+    ViewData["Title"] = "Registration";
+}
+<style>
+    .container {
+        margin-left: 200px;
+        margin-top: 50px;
+    }
+</style>
+<div class="container">
+    <div class="shadow p-3 mb-5 bg-body-tertiary rounded" style="width:430px;">
+        <form method="post" asp-action="Registration">
+            <div class="text-center">
+                <b><h4>Registration</h4></b>
+                <img src="~/Uploads/LoginIcon.png" class="rounded" style="height:80px;" alt="Cinque Terre">
+            </div>
+            <div class="form-group">
+                <div>
+                    </br>
+                </div>
+                <label asp-for="Name"></label>
+                <div class="col-sm-15">
+                    <input class="form-control" asp-for="Name" placeholder="FirstName" style="width:400px;" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <br />
+                </div>
+                <label asp-for="EmialAddress"></label>
+                <div class="col-sm-15">
+                    <input class="form-control" asp-for="EmialAddress" placeholder="Email Address" style="width:400px;>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    </br>
+                </div>
+                <label asp-for="Password"></label>
+                <div class="col-sm-15">
+                    <input class="form-control" asp-for="Password" placeholder="Password" style="width:400px;>
+                </div>
+            </div>
+            </br>
+            <div class="form-group">
+                <div>
+                    </br>
+                </div>
+                <label asp-for="ConfirmPassword"></label>
+                <div class="col-sm-15">
+                    <input class="form-control" asp-for="ConfirmPassword" placeholder="ConfirmPassword" style="width:400px;>
+                </div>
+            </div>
+            </br>
+            <div class="form-group">
+                </br>
+                <div class="text-center" col-sm-15>
+                    <input type="submit" class="btn btn-dark w-40" value="Register" />
+                    <input type="submit" class="btn btn-warning w-40" value="Back" asp-controller="Auth" asp-action="oauth" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
