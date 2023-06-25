@@ -1,4 +1,5 @@
-![image](https://user-images.githubusercontent.com/42665669/230115760-aa878fe5-4d78-49e9-8f81-62d90e1227c6.png)
+<img width="909" alt="image" src="https://github.com/Tuhin1508/BloggerQueue.io/assets/42665669/1755db0d-a1fe-430a-ac19-eee925712478">
+
 <h1 align="center" >BloggerQueue.io, 👋 </h1>
 <h3 align="center">user-friendly blog writing application that simplifies the process of creating and managing blog content.</h3>
 
